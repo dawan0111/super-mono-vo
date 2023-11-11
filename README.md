@@ -1,23 +1,17 @@
-This is an OpenCV 3.0 based implementation of a monocular visual odometry algorithm.
+# SuperPoint Visual Odometry Project
 
-## Algorithm
-Uses Nister's Five Point Algorithm for Essential Matrix estimation, and FAST features, with a KLT tracker.
-More details are available [here as a report](http://avisingh599.github.io/assets/ugp2-report.pdf), and
-[here as a blog post](http://avisingh599.github.io/vision/monocular-vo/). 
+## Project Overview
 
-Note that this project is not yet capable of doing reliable relative scale estimation, 
-so the scale informaion is extracted from the KITTI dataset ground truth files.
+This project leverages the SuperPoint deep learning model to implement visual odometry, a technique for estimating a robot or vehicle's path through image sequences captured by a camera. SuperPoint excels in detecting keypoints and descriptors, enabling high-accuracy tracking in this project.
 
-## Demo Video
+## Key Features
 
-[![Demo video](http://share.gifyoutube.com/Ke1ope.gif)](http://www.youtube.com/watch?v=homos4vd_Zs)
+- **SuperPoint Keypoint Detection**: Rapid and precise identification of interest points within images.
+- **Optical Flow for Feature Matching**: Tracking the movement across image sequences through robust feature matching using Optical Flow.
+- **Path Estimation**: Estimation of camera movement and trajectory based on matching information.
+- **Real-time Processing**: Real-time tracking support through the optimization of SuperPoint and the visual odometry algorithm.
 
-
-## Requirements
-OpenCV 3.0
-
-## How to compile?
-Provided with this repo is a CMakeLists.txt file, which you can use to directly compile the code as follows:
+## Installation
 ```bash
 mkdir build
 cd build
@@ -25,21 +19,12 @@ cmake ..
 make
 ```
 
-## How to run? 
-After compilation, in the build directly, type the following:
-```bash
-./vo
-```
-## Before you run
-In order to run this algorithm, you need to have either your own data, 
-or else the sequences from [KITTI's Visual Odometry Dataset](http://www.cvlibs.net/datasets/kitti/eval_odometry.php).
-In order to run this algorithm on your own data, you must modify the intrinsic calibration parameters in the code.
+## Examples
+![(https://i.postimg.cc/Kv8GL63M/2023-09-01-11-50-32.png)](https://i.postimg.cc/Kv8GL63M/2023-09-01-11-50-32.png)
 
-## Performance
-![Results on the KITTI VO Benchmark](http://avisingh599.github.io/images/visodo/2K.png)
+## Video Link
+[![Video Link](https://i.postimg.cc/y8rkkVfx/2023-11-11-6-03-01.png)](https://youtu.be/vYlqADv2Alk)
 
-## Contact
-For any queries, contact: avisingh599@gmail.com
 
 ## License
 MIT
